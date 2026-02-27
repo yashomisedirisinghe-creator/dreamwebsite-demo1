@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Identity Forge</title>
+    <link rel="stylesheet" href="dreamcss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="forge-body fade-in">
+
+    <div class="dream-canvas"></div>
+
+    <main class="forge-container" id="forge-ui">
+        <header class="forge-header">
+            <h2 class="section-title">Identity Forge</h2>
+            <p class="subtitle">Select your vessel for the simulation</p>
+        </header>
+
+        <section class="character-grid">
+            
+            <article class="character-card" data-role="hero">
+                <div class="card-content">
+                    <h3 class="card-title">The Hero</h3>
+                    <p class="card-desc">Wield extraordinary abilities. Shape the destiny of the realm.</p>
+                </div>
+            </article>
+
+            <article class="character-card" data-role="historical">
+                <div class="card-content">
+                    <h3 class="card-title">The Legend</h3>
+                    <p class="card-desc">Step into the shoes of a pivotal historical figure.</p>
+                </div>
+            </article>
+
+            <article class="character-card" data-role="observer">
+                <div class="card-content">
+                    <h3 class="card-title">The Ghost</h3>
+                    <p class="card-desc">An invisible observer. Witness events without altering them.</p>
+                </div>
+            </article>
+
+            <article class="character-card" data-role="custom">
+                <div class="card-content">
+                    <h3 class="card-title">Custom Entity</h3>
+                    <p class="card-desc">Forge a completely unique identity from the subconscious.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="action-wrapper">
+            <button id="simulate-btn" class="glass-btn primary-btn hidden">Initialize Simulation</button>
+        </div>
+    </main>
+
+    <script src="dreamjava.js"></script>
+</body>
+</html>

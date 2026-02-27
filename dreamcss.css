@@ -1,0 +1,675 @@
+/* --- GLOBAL VARIABLES (Color Theory & Psychology) --- */
+:root {
+    --deep-void: #050508;
+    --dream-glow: #1a1a2e;
+    --neon-accent: #6b8af0;
+    --text-main: #f0f0f5;
+    --text-muted: #8b8b99;
+    --glass-bg: rgba(20, 20, 25, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--deep-void);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- LANDING PAGE STYLES (`index.html`) --- */
+.landing-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrolling for a cinematic feel */
+}
+
+/* The Animated Breathing Background */
+.dream-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--dream-glow) 0%, var(--deep-void) 70%);
+    z-index: -1;
+    animation: breathe 8s infinite alternate ease-in-out;
+}
+
+@keyframes breathe {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Central Layout Elements */
+.landing-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Typography */
+.aura-title {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    text-shadow: 0 0 30px rgba(107, 138, 240, 0.3);
+    margin-right: -0.3em; /* Balances the intense letter-spacing */
+}
+
+.aura-tagline {
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Glassmorphism Button */
+.glass-btn {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 50px; /* Pill shape for organic form */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.glass-btn:hover {
+    background: rgba(107, 138, 240, 0.15);
+    border-color: var(--neon-accent);
+    box-shadow: 0 0 20px rgba(107, 138, 240, 0.4);
+    transform: translateY(-2px);
+}
+
+/* JavaScript Trigger Class */
+.fade-to-black {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+/* --- SCENARIO BUILDER STYLES (`scenario-builder.html`) --- */
+
+/* Page layout and entry animation */
+.builder-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.builder-container {
+    width: 100%;
+    max-width: 800px; /* Slightly wider to hold the form */
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* CSS Grid for perfect Alignment and Structure */
+.builder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1.5rem;
+    padding: 3rem;
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Forces the element to stretch across both columns */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Custom Dropdown Styling */
+.cinematic-select {
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.cinematic-select:focus {
+    border-color: var(--neon-accent);
+}
+
+/* Custom Cinematic Slider */
+.styled-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+    margin-top: 0.5rem;
+}
+
+.styled-slider:: -webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--neon-accent);
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-accent);
+    transition: transform 0.2s;
+}
+
+.styled-slider:: -webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.primary-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: rgba(107, 138, 240, 0.1);
+    border-color: var(--neon-accent);
+}
+
+/* --- IDENTITY FORGE STYLES (`character-forge.html`) --- */
+
+.forge-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.forge-container {
+    width: 100%;
+    max-width: 1000px;
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+.forge-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Character Grid Layout */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Glassmorphism Character Cards */
+.character-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    height: 250px;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes text to the bottom of the card */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card Hover Effects */
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(107, 138, 240, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(107, 138, 240, 0.2);
+}
+
+/* Active/Selected State applied via JavaScript */
+.character-card.selected {
+    border-color: var(--neon-accent);
+    background: rgba(107, 138, 240, 0.15);
+    box-shadow: 0 0 30px rgba(107, 138, 240, 0.4);
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Hide the initialize button initially */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.action-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- SIMULATION VIEWPORT STYLES (`simulation.html`) --- */
+
+.simulation-body {
+    background-color: #000; /* Pure black for cinema feel */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    cursor: none; /* Hides cursor initially for immersion */
+}
+
+.simulation-visuals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the magic property that makes the video fill the screen perfectly */
+    z-index: 1;
+    filter: brightness(0.6); /* Optional: Darkens the video slightly so your subtitles are easy to read! */
+}
+
+/*@keyframes slowPan {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}*/
+
+/* Cinematic Letterboxing */
+.letterbox {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 12vh;
+    background-color: #000;
+    z-index: 5;
+    transition: height 0.5s ease;
+}
+
+.top-bar { top: 0; }
+.bottom-bar { bottom: 0; }
+
+/* Subtitles */
+.subtitle-container {
+    position: absolute;
+    bottom: 15vh; /* Places it right above the bottom letterbox */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 6;
+    padding: 0 2rem;
+}
+
+.cinematic-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5); /* Maximum readability */
+}
+
+/* Hidden UI Controls */
+.hidden-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* Prevents clicking when hidden */
+}
+
+/* Class to show the UI when mouse moves */
+.hidden-ui.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sim-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sim-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.sim-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.icon-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+}
+
+.destructive {
+    border-color: rgba(255, 60, 60, 0.4);
+    color: #ff8888;
+}
+
+.destructive:hover {
+    background: rgba(255, 60, 60, 0.2);
+    border-color: #ff3c3c;
+    box-shadow: 0 0 20px rgba(255, 60, 60, 0.3);
+} 
+
+/* --- AUTHENTICATION PORTAL (`login.html`) --- */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-panel {
+    max-width: 450px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.cinematic-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    color: var(--text-main);
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.cinematic-input:focus {
+    outline: none;
+    border-color: var(--neon-accent);
+}
+
+/* --- THE ARCHIVE (`archive.html`) --- */
+.archive-body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+}
+
+.archive-container {
+    width: 100%;
+    max-width: 1200px;
+    z-index: 10;
+}
+
+.archive-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.gallery-grid {
+    display: grid;
+    /* This creates a highly responsive, auto-filling grid */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.gallery-card {
+    height: 300px;
+    background: rgba(20, 20, 25, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* Placeholder gradient for missing images */
+    background: linear-gradient(45deg, #1a1a24, #0a0a0f);
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 15px rgba(107, 138, 240, 0.3);
+    border-color: var(--neon-accent);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.gallery-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+
+.gallery-era {
+    font-size: 0.8rem;
+    color: var(--neon-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* --- THE ENGINE (`about.html`) --- */
+.about-body, .settings-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.about-container, .settings-container {
+    width: 100%;
+    max-width: 700px;
+    z-index: 10;
+}
+
+.text-panel {
+    padding: 4rem;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* --- USER PREFERENCES (`settings.html`) --- */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.setting-info h3 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+
+.setting-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Custom UI Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid var(--glass-border);
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-muted);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: rgba(107, 138, 240, 0.3);
+    border-color: var(--neon-accent);
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: var(--neon-accent);
+    box-shadow: 0 0 10px var(--neon-accent);
+}
+
+
+/* --- FLOATING DREAM PARTICLES --- */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--neon-accent);
+    /* Creates a beautiful glowing halo effect */
+    box-shadow: 0 0 15px var(--neon-accent), 0 0 30px var(--neon-accent);
+    opacity: 0;
+    /* The animation that makes them drift upwards */
+    animation: floatUp infinite linear;
+    z-index: 0;
+}
+
+/* Customizing the size, starting position, and speed of each particle */
+.p1 { width: 5px; height: 5px; left: 15%; bottom: -10%; animation-duration: 12s; animation-delay: 0s; }
+.p2 { width: 8px; height: 8px; left: 35%; bottom: -10%; animation-duration: 18s; animation-delay: 3s; }
+.p3 { width: 4px; height: 4px; left: 65%; bottom: -10%; animation-duration: 10s; animation-delay: 1s; }
+.p4 { width: 6px; height: 6px; left: 85%; bottom: -10%; animation-duration: 15s; animation-delay: 5s; }
+.p5 { width: 9px; height: 9px; left: 50%; bottom: -10%; animation-duration: 20s; animation-delay: 2s; }
+.p6 { width: 3px; height: 3px; left: 25%; bottom: -10%; animation-duration: 14s; animation-delay: 7s; }
+
+/* The Keyframe Animation Logic */
+@keyframes floatUp {
+    0% { 
+        transform: translateY(0) scale(0.5); 
+        opacity: 0; 
+    }
+    20% { 
+        opacity: 0.5; /* Fades in smoothly */
+    }
+    80% { 
+        opacity: 0.5; 
+    }
+    100% { 
+        transform: translateY(-110vh) scale(1.2); /* Drifts off the top of the screen */
+        opacity: 0; 
+    }
+}

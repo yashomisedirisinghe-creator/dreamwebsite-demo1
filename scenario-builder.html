@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Nidra | Director's Canvas</title>
+    <link rel="stylesheet" href="dreamcss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="builder-body fade-in">
+
+    <div class="dream-canvas"></div>
+
+    <!--<main class="builder-container" id="builder-ui">
+        <header class="builder-header">
+            <h2 class="section-title">Director's Canvas</h2>
+            <p class="subtitle">Sculpt your scenario</p>
+        </header>
+
+        <section class="glass-panel builder-grid">
+            
+            <div class="input-group full-width">
+                <label for="dream-prompt" class="input-label">The Core Concept</label>
+                <textarea id="dream-prompt" placeholder="Describe the environment, the atmosphere, and the inciting incident..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="role-select" class="input-label">Your Role</label>
+                <select id="role-select" class="cinematic-select">
+                    <option value="protagonist">The Protagonist</option>
+                    <option value="bystander">Silent Observer</option>
+                    <option value="antagonist">The Antagonist</option>
+                    <option value="historical">Historical Figure</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="era-select" class="input-label">Era / Timeline</label>
+                <select id="era-select" class="cinematic-select">
+                    <option value="future">Distant Future</option>
+                    <option value="medieval">Medieval Fantasy</option>
+                    <option value="modern">Modern Day</option>
+                    <option value="ancient">Ancient History</option>
+                </select>
+            </div>
+
+            <div class="input-group full-width slider-container">
+                <label class="input-label">Cinematic Mood (Surreal to Gritty)</label>
+                <input type="range" min="1" max="100" value="50" class="styled-slider">
+            </div>
+
+            <div class="input-group full-width">
+                <button id="forge-btn" class="glass-btn primary-btn">Proceed to Identity Forge</button>
+<button onclick="window.location.href='./settings.html'" class="glass-btn" style="margin-top: 0.5rem; opacity: 0.7;">Neural Preferences</button>
+            </div>
+            
+        </section>
+    </main>-->
+	
+	
+	<main class="builder-container" id="builder-ui">
+        <header class="forge-header">
+            <h2 class="section-title">The Dream Loom</h2>
+            <p class="subtitle">Weave the foundational threads of your simulation.</p>
+        </header>
+
+        <div class="console-panel">
+            
+            <div class="input-group full-width">
+                <label class="console-label">Core Directive (Scenario Prompt)</label>
+                <textarea class="cinematic-textarea" placeholder="Describe the scene... e.g., 'A forgotten gothic castle surrounded by a glowing purple mist...'"></textarea>
+            </div>
+
+            <div class="tuning-divider"></div>
+
+            <div class="tuning-grid">
+                <div class="input-group">
+                    <label class="console-label">Mood <span>(Ethereal ⟷ Nightmare)</span></label>
+                    <input type="range" class="styled-slider" min="1" max="100" value="20">
+                </div>
+                <div class="input-group">
+                    <label class="console-label">Era <span>(Ancient ⟷ Futuristic)</span></label>
+                    <input type="range" class="styled-slider" min="1" max="100" value="50">
+                </div>
+                <div class="input-group">
+                    <label class="console-label">Realism <span>(Abstract ⟷ Hyper-Real)</span></label>
+                    <input type="range" class="styled-slider" min="1" max="100" value="80">
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="action-wrapper">
+            <button id="forge-btn" class="glass-btn primary-btn">Initialize Forge</button>
+        </div>-->
+		<div class="action-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <button id="forge-btn" class="glass-btn primary-btn">Initialize Forge</button>
+            <button onclick="window.location.href='./settings.html'" class="glass-btn" style="opacity: 0.7; font-size: 0.8rem; padding: 0.5rem 2rem; border: none; background: transparent; text-decoration: underline;">Neural Preferences (Settings)</button>
+        </div>
+    </main>
+
+    <script src="dreamjava.js"></script>
+</body>
+</html>

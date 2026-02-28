@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Nidra | Simulation Active</title>
+    <link rel="stylesheet" href="dreamcss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="simulation-body">
+
+    <video class="simulation-visuals" id="dream-video" autoplay loop muted playsinline>
+        <source src="castle.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+	
+	<div class="vignette-overlay"></div>
+
+    <div class="letterbox top-bar"></div>
+    <div class="letterbox bottom-bar"></div>
+
+    <div class="subtitle-container">
+        <p class="cinematic-subtitle">"The dark gothic castle of Count Dracula surrounded by a glowing purple mist,where the darkest chapter was born..."</p>
+    </div>
+
+    <!--<nav class="hidden-ui" id="sim-controls">
+        <div class="sim-header">
+            <h3 class="sim-title">Gothic Palace - Act I</h3>
+        </div>
+        
+        <div class="sim-actions">
+            <button class="glass-btn icon-btn" id="pause-btn">Pause Scene</button>
+            <button class="glass-btn icon-btn destructive" id="wake-btn">Wake Up (Exit)</button>
+        </div>
+    </nav>-->
+	
+	<nav class="hidden-ui" id="sim-controls">
+        <div class="sim-header">
+            <h3 class="sim-title">Gothic Palace - Act I</h3>
+        </div>
+        
+        <div class="grading-controls" style="margin-bottom: 1rem; display: flex; gap: 1rem; justify-content: center;">
+            <button id="grade-normal" class="glass-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Standard</button>
+            <button id="grade-sepia" class="glass-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Historical (Sepia)</button>
+            <button id="grade-teal" class="glass-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Suspense (Teal)</button>
+        </div>
+
+        <!--<div class="sim-actions">
+            <button class="glass-btn icon-btn" id="pause-btn">Pause Scene</button>
+            <button class="glass-btn icon-btn destructive" id="wake-btn">Wake Up (Exit)</button>
+			<button class="glass-btn icon-btn destructive" id="save-btn">Save the Echo</button>
+        </div>-->
+		
+		 <div class="sim-actions">
+            
+			<button class="glass-btn icon-btn" id="save-btn">Save the Echo</button>
+    
+			<button class="glass-btn icon-btn" id="pause-btn">Pause Scene</button>
+			<button class="glass-btn icon-btn destructive" id="wake-btn">Wake Up (Exit)</button>
+		</div>
+		
+		
+    </nav>
+	
+
+    <script src="dreamjava.js"></script>
+</body>
+</html>
